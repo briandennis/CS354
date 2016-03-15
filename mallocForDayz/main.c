@@ -10,17 +10,24 @@ int main (){
     int health;
   };
 
-  struct Animal bobby;
+    *Animal createAnimal (char name[10], int age, double attackMult){
 
-  char *namePointer = &bobby.name[0];
+    struct Animal returnAnimal = (struct Animal) malloc(sizeof(struct Animal));
 
-  strcpy(namePointer, "Giraffe");
-  bobby.age = 49;
-  bobby.attackMult = 1.9;
-  bobby.health = 100;
+    strcpy(&returnAnimal.name, name);
+    returnAnimal.name = name;
+    returnAnimal.age = age;
+    returnAnimal.attackMult = attackMult;
+    returnAnimal.health = 100;
+
+    return &returnAnimal;
+  }
+
+  struct Animal *bobby = createAnimal("Giraffe",20,1.9);
 
 
-  printf("Bobby's name: %s", bobby.name);
+  printf("Bobby's name: %s", *bobby.name);
 
   return 1;
+
 }
