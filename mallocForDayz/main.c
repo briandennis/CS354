@@ -1,6 +1,8 @@
 #import <stdio.h>
 #import <string.h>
 
+#define PI 3.141592
+
 int main (){
 
   struct Animal {
@@ -17,7 +19,9 @@ int main (){
 
   struct Animal * bobbyPointer = &bobby;
 
-  printf("Bobby's species via pointer: %s", bobbyPointer -> species);
+  printf("Bobby's species via pointer: %s \n", bobbyPointer -> species);
+
+  printf("Bobby's attack value for throwing a pie is: %f \n", PI * bobby.attackMult);
 
   return 1;
 
